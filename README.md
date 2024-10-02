@@ -1,4 +1,3 @@
-# Audio_Recognition_by_Machine_LearningM5Core2
 # Audio Recognition with M5Core2
 
 This project demonstrates audio recognition using the M5Stack Core2 device. It leverages Edge Impulse for inferencing and Blynk for IoT connectivity.
