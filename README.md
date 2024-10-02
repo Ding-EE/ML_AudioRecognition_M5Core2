@@ -31,4 +31,4 @@ This project demonstrates audio recognition using the M5Stack Core2 device. It l
 
 1. **Clone the Repository**:
    ```bash
-   <https://github.com/Ding-EE/Audio_Recognition_by_Machine_LearningM5Core2>
+   https://github.com/Ding-EE/Audio_Recognition_by_Machine_LearningM5Core2
