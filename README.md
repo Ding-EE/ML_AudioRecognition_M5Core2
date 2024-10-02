@@ -80,4 +80,4 @@ The I2S interface is initialized in the `InitI2SSpeakOrMic` function, set to mic
 
 ## Contact
 
-For any questions or support, please contact [Gabriel] at [dinggabriel2@gmail.com].
+For any questions or support, please contact Gabriel at [dinggabriel2@gmail.com].
