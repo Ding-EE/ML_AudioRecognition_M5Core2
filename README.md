@@ -53,7 +53,7 @@ The data curation process is handled using a Python script available in this [Go
    - Select "ESP32" and download the firmware or library.
 
 7. **Integrate with Your Project**:
-   - Add the downloaded Edge Impulse library to your PlatformIO project.
+   - Add the downloaded Edge Impulse library to your Arduimo project.
    - Include the necessary headers and functions in your code to use the trained model.
 
 ## Troubleshooting
