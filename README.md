@@ -27,35 +27,11 @@ This project demonstrates audio recognition using the M5Stack Core2 device. It l
 3. **I2S Pin Configuration**:
    - Ensure the I2S pins are correctly configured for your M5Core2 hardware setup.
 
-## Microphone Configuration for M5Core2
+## Data Curation
 
-To correctly configure the microphone on the M5Core2, set up the I2S (Inter-IC Sound) interface for processing audio input.
-
-### I2S Pin Configuration
-
-- **I2S Serial Clock (BCK) Pin**: `GPIO 12`
-- **I2S Left/Right Clock (LRCK) Pin**: `GPIO 0`
-- **I2S Data Out Pin**: `GPIO 2`
-- **I2S Data In Pin (Microphone input)**: `GPIO 34`
-
-### Initialization
-
-The I2S interface is initialized in the `InitI2SSpeakOrMic` function, set to microphone input (PDM mode). Configuration includes:
-
-- **Mode**: Master, RX (receive), PDM
-- **Sample Rate**: `EI_CLASSIFIER_FREQUENCY` (set by the Edge Impulse model)
-- **Bits per Sample**: 16-bit
-- **Channel Format**: Mono
-- **DMA Buffer Settings**: Configured for efficient data transfer
-
-### Functionality
-
-- **Data Capture**: Microphone data is captured in chunks and stored in a buffer for processing.
-- **Signal Processing**: The audio signal is prepared for inferencing by converting it to the necessary format for the Edge Impulse classifier.
+The data curation process is handled using a Python script available in this [Google Colab notebook](https://colab.research.google.com/github/ShawnHymel/ei-keyword-spotting/blob/master/ei-audio-dataset-curation.ipynb). This script helps in organizing and preparing your audio data, which can then be exported to Edge Impulse for further processing and model training.
 
 ## Obtaining the Code from Edge Impulse
-
-To integrate Edge Impulse with the M5Core2 for audio recognition, follow these steps:
 
 1. **Sign Up or Log In**:
    - Go to [Edge Impulse](https://www.edgeimpulse.com/) and create an account or log in.
@@ -80,4 +56,28 @@ To integrate Edge Impulse with the M5Core2 for audio recognition, follow these s
    - Add the downloaded Edge Impulse library to your PlatformIO project.
    - Include the necessary headers and functions in your code to use the trained model.
 
-These steps will help you set up the Edge Impulse model for use with your M5Core2 device.
+## Troubleshooting
+
+- **Upload Issues**: If the code fails to upload, use the UIFLOW Firmware Burning Tool. Download it from [M5Stack Documentation](https://docs.m5stack.com/en/download).
+
+## Usage
+
+- **Start**: Upon powering the device, it initializes the display, connects to Wi-Fi, and starts audio recognition.
+- **Inferencing**: The device listens for audio and displays recognized words on the screen.
+- **Blynk Integration**: Based on recognized commands (e.g., "go" or "stop"), it sends updates to the Blynk app.
+
+## Code Overview
+
+- **setup()**: Initializes the device, display, and I2S for microphone input.
+- **loop()**: Continuously records audio, processes inferencing, and updates the display and Blynk app.
+- **displayWaveform()**: Renders the audio waveform on the display.
+- **microphone_inference_start()**: Prepares the buffer for audio sampling.
+- **microphone_inference_record()**: Captures audio data for inferencing.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For any questions or support, please contact Gabriel at dinggabriel2@gmail.com.
